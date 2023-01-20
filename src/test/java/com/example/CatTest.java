@@ -3,20 +3,16 @@ package com.example;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
-
+@RunWith(MockitoJUnitRunner.class)
 public class CatTest {
     @Mock
     Feline feline;
-
-    @Before
-    public void setUp() {
-        MockitoAnnotations.initMocks(this);
-    }
 
     @Test
     public void getSoundTest() {
@@ -30,6 +26,12 @@ public class CatTest {
         Mockito.when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         List<String> expectedMeal = List.of("Животные", "Птицы", "Рыба");
         List<String> actualMeal = cat.getFood();
-        Assert.assertEquals("200", expectedMeal, actualMeal);
+        Assert.assertEquals(expectedMeal, actualMeal);
+    }
+    @Test
+    public void getFood() throws Exception {
+        Cat cat = new Cat(feline);
+        cat.getFood();
+        Mockito.verify(feline, Mockito.times(1)).eatMeat();
     }
 }

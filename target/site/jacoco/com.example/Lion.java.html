@@ -9,27 +9,27 @@ public class Lion {
     Feline feline;
 
     public Lion(Feline feline,
-<span class="nc" id="L12">                String sex) throws Exception {</span>
-<span class="nc" id="L13">        this.feline = feline;</span>
-<span class="nc bnc" id="L14" title="All 2 branches missed.">        if (&quot;Самец&quot;.equals(sex)) {</span>
-<span class="nc" id="L15">            hasMane = true;</span>
-<span class="nc bnc" id="L16" title="All 2 branches missed.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
-<span class="nc" id="L17">            hasMane = false;</span>
+<span class="fc" id="L12">                String sex) throws Exception {</span>
+<span class="fc" id="L13">        this.feline = feline;</span>
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (&quot;Самец&quot;.equals(sex)) {</span>
+<span class="fc" id="L15">            hasMane = true;</span>
+<span class="fc bfc" id="L16" title="All 2 branches covered.">        } else if (&quot;Самка&quot;.equals(sex)) {</span>
+<span class="fc" id="L17">            hasMane = false;</span>
         } else {
-<span class="nc" id="L19">            throw new Exception(&quot;Используйте допустимые значения пола животного - самей или самка&quot;);</span>
+<span class="fc" id="L19">            throw new Exception(&quot;Используйте допустимые значения пола животного - самей или самка&quot;);</span>
         }
-<span class="nc" id="L21">    }</span>
+<span class="fc" id="L21">    }</span>
 
     public int getKittens() {
-<span class="nc" id="L24">        return feline.getKittens();</span>
+<span class="fc" id="L24">        return feline.getKittens();</span>
     }
 
     public boolean doesHaveMane() {
-<span class="nc" id="L28">        return hasMane;</span>
+<span class="fc" id="L28">        return hasMane;</span>
     }
 
     public List&lt;String&gt; getFood() throws Exception {
-<span class="nc" id="L32">        return feline.getFood(&quot;Хищник&quot;);</span>
+<span class="fc" id="L32">        return feline.getFood(&quot;Хищник&quot;);</span>
     }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
